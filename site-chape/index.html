@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Associação Chapecoense de Futebol</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/png" sizes="128x128" href="img/escudo-chape.png">
+</head>
+
+<body class="pagina-home">
+  <!--Menu de Navegação-->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top" style="background-color: green;">
+    <div class="container-fluid">
+      <img src="img/escudo-chape.png" alt="Escudo-chapecoense" width="45">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-2">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="paginas/sobre.html">Sobre nós</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="paginas/museu.html">Museu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="paginas/contato.html">Contato</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../loja/index.php">Loja</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Seção Principal -->
+  <header class="hero-section text-center text-white py-5 bg-dark">
+    <div class="container">
+    </div>
+  </header>
+
+  <main>
+    <!-- Notícias -->
+    <section class="bg-dark text-white py-5">
+      <div class="container">
+        <div class="row">
+          <!-- COLUNA PRINCIPAL (CARDS) -->
+          <div class="col-md-8">
+
+            <!-- Card 1 -->
+            <div class="card mb-3 shadow bg-success text-white titulo-sobre">
+              <div class="row g-0">
+                <div class="col p-4">
+                  <span class="badge bg-white m-2 text-success">16 SET</span>
+                  <h3 class="card-title">Chapecoense X Athletico-PR</h3>
+                  <p>Chapecoense é superada pelo time do Athletico-PR em casa nessa última Terça-Feira</p>
+                  <a class="btn btn-link p-0 text-white" href="#">Continue lendo</a>
+                </div>
+                <div class="col-auto d-none d-lg-block">
+                  <img src="img/chape-ath.jpg" width="300" class="img-fluid rounded" alt="Jogo chapeXath">
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card mb-3 shadow bg-success text-white titulo-sobre">
+              <div class="row g-0">
+                <div class="col p-4">
+                  <span class="badge bg-white text-success m-2">18 SET</span>
+                  <h3 class="card-title">Coletiva de imprensa | MEI. Giovanni A.</h3>
+                  <p>Meio Campista Giovanni Augusto projeta confronto diante o Cuiabá fora de casa válido pela 27°
+                    rodada</p>
+                  <a class="btn btn-link p-0 text-white" href="#">Continue lendo</a>
+                </div>
+                <div class="col-auto d-none d-lg-block">
+                  <img src="img/giovanni media.jpg" width="300" class="img-fluid rounded" alt="Coletiva Giovanni">
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- COLUNA LATERAL (MENU/TABELA DE JOGOS) -->
+          <div class="col-md-4">
+            <div class="card shadow-sm">
+              <div class="card-header bg-success text-white titulo-sobre">Próximos Jogos</div>
+              <div class="card-body">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item d-flex align-items-center" class="">
+                    <a class="bg-success text-white data-jogo badge">21 SET</a>
+                    <img src="img/escudo-cuiaba.png" alt="escudo-cuiaba" width="23" class=" ms-2 me-2">
+                    Cuiabá x 
+                    Chapecoense
+                    <img src="img/escudo-chape.png" alt="escudo-chape" width="25" class="me-2 ms-1">
+                  </li>
+                  <li class="list-group-item d-flex align-items-center">
+                    <a class="bg-success text-white data-jogo badge">25 SET</a>
+                    <img src="img/escudo-chape.png" alt="escudo-chape" width="25" class="me-2 ms-2">
+                    Chapecoense x 
+                    Avaí
+                  <img src="img/avai-escudo.png" alt="escudo-pior-estado" width="20" class="me-2 ms-1">
+                  </li>
+                  <li class="list-group-item d-flex align-items-center">
+                    <a class="bg-success text-white data-jogo badge">28 SET</a>
+                    <img src="img/escudo-chape.png" alt="escudo-chape" width="25" class="me-2 ms-2">
+                    Chapecoense x
+                    Santa Catarina (Copa SC)
+                  <img src="img/escudo-sc.png" alt="escudo-sc" width="24" class="me-2 ms-1">
+                  </li>
+                  <li class="list-group-item d-felx align-items-center">
+                    <a class="bg-success text-white data-jogo badge">29 SET</a>
+                    <img src="img/escudo-amazonas.png" alt="escudo-amazonas" width="25" class="me-2 ms-2">
+                    Amazonas x Chapecoense
+                    <img src="img/escudo-chape.png" alt="escudo-chape" width="25" class="me-2 ms-2">
+                  </li>
+                  <li class="list-group-item d-flex align-items-center">
+                    <a class="bg-success text-white data-jogo badge">04 OUT</a>
+                    <img src="img/escudo-chape.png" alt="escudo-chape" width="25" class="me-2 ms-2">
+                    Chapecoense x
+                    Novorizontino
+                    <img src="img/escudo-novorizontino.png" alt="escudo-novorizontino" width="24" class="me-2 ms-1">
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Fim Cards -->
+  </main>
+
+<!-- Notícias mais antigas -->
+<section class="py-5 bg-dark text-white">
+  <div class="container">
+    <div class="row align-items-center">
+      <h3 class="align-items-center">NOTÍCIAS ANTERIORES</h3>
+      <!-- Carrossel -->
+      <div id="carouselExampleCaptions" class="carousel slide carousel-index">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+        </div>
+
+        <div class="carousel-inner">
+
+          <!-- Slide 1 -->
+          <div class="carousel-item active">
+            <a href="https://ge.globo.com/mg/zona-da-mata-centro-oeste/futebol/brasileirao-serie-b/jogo/22-08-2025/athletic-club-chapecoense.ghtml" target="_blank">
+              <div class="shadow-img-container">
+                <img src="img/SERVICO-DE-JOGO-SITE-1.jpg" class="d-block w-100 h-80 shadow-img" alt="Título 1">
+              </div>
+              <div class="carousel-caption d-none d-md-block">
+                <h5>SERVIÇO DE JOGO CHAPECOENSE X ATHLETIC</h5>
+                <p>20 de Abril de 2025</p>
+              </div>
+            </a>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item">
+            <a href="https://chapecoense.com/2025/09/10/chape-vence-o-concordia-fora-de-casa-na-estreia-da-copa-santa-catarina" target="_blank">
+              <div class="shadow-img-container">
+                <img src="img/chapexconcordia.jpeg" class="d-block w-100 rounded shadow-img" alt="Título 2">
+              </div>
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Copa SC: Chapecoense vence Concórdia na estreia</h5>
+                <p>19 de Setembro de 2025</p>
+              </div>
+            </a>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="carousel-item">
+            <a href="https://ge.globo.com/sc/futebol/brasileirao-serie-b/jogo/07-09-2025/criciuma-chapecoense.ghtml" target="_blank">
+              <div class="shadow-img-container">
+                <img src="img/cricri x chape.jpeg" class="d-block w-100 rounded shadow-img" alt="Título 3">
+              </div>
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Chapecoense é superada pelo Criciúma e quebra sequência de invencibilidade</h5>
+                <p>07 de Setembro de 2025</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Botões -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Próximo</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <footer class="bg-success text-white text center py-3">
+    <div class="container">
+      <p class="mb-0">Trabalho Desenvolvimento Web 1 - Site Associação Chapecoense de Futebol &copy; 2025</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

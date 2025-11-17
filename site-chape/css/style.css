@@ -1,0 +1,114 @@
+/*Cores do tema*/
+:root{
+    --azul-escuro:#020115;
+    --amarelo:#ffc107;
+    --verde: #39972c;
+    --verde-chape: #0f5505;
+}
+/*Sessão principal*/
+.hero-section{
+    background: white;
+    min-width: 100vh;
+}
+
+card-1{
+    background-color: var(--verde-chape);
+}
+
+/*Responsivo*/
+@media(max-width:760px){
+    .hero-section{
+        width: 120px;
+        height: 120px;
+    }
+}
+
+.hero-image{
+    width:150px;
+    height: 150px;
+    border: 3px solid var(--amarelo)
+}
+
+img{
+    transition: transform 0.3s;
+}
+
+img:hover{
+    transform: scale(1.05);
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+section, header{
+    scroll-margin-top: 70px;
+}
+
+.navbar .nav-link.active{
+    background-color: var(--verde-chape);
+    color:white;
+    border-radius: 5px;
+    padding: 6px 12px;
+}
+
+.shadow-img {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.5); 
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.carousel-index .carousel-item img{
+    height: 450px;
+    width: 750px;
+    object-fit: cover;
+}
+
+.card .col-auto img {
+  height: 100%;
+  object-fit: cover; /* corta proporcionalmente */
+  border-radius: 0 .5rem .5rem 0; /* mantém só a borda direita arredondada */
+}
+
+.data-jogo{
+    text-decoration: none;
+}
+
+.shadow-img-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.shadow-img-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.shadow-img-container::after {
+  content: "";
+  position: absolute;
+  inset: 0; /* cobre toda a imagem */
+  background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0));
+}
+
+.titulo-sobre{
+    align-items: center;
+    justify-content: center;
+    display:flex;
+    flex-direction: column;
+    background: linear-gradient(to top, #014501, #0F6232);
+    color:white;
+}
+.header-sobre{
+    background-color: #0F6232 ;
+}
+.jogador{
+    background: linear-gradient(to bottom, #014501, #0F6232);
+    color:white;
+}
