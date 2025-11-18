@@ -2,85 +2,85 @@
 include '../../../header.php';
 include '../../../db.class.php';
 
-$db = new db('usuario');
-/*$db->checkLogin();
+$db = new db('funcionario');
 
-//var_dump($dados);
-//exit;
-
-if (!empty($_GET['id'])) {
-    $db->destroy($_GET['id']);
+// Se tem busca
+if (!empty($_POST['valor'])) {
+    $dados = $db->search([
+        'tipo'  => $_POST['tipo'],
+        'valor' => $_POST['valor']
+    ]);
+} else {
+    // Lista tudo
+    $dados = $db->all();
 }
 
-if (!empty($_POST)) {
-    $dados = $db->search($_POST);
-} else {
-    $dados = $db->all();
-}*/
-
+// Se deletar
+if (!empty($_GET['cpf'])) {
+    $db->destroy($_GET['cpf']);
+    header("Location: FuncionarioList.php");
+    exit;
+}
 
 ?>
 
-<h3>Listagem de Usuários</h3>
+<h3>Funcionários</h3>
 
-<form action="./usuarioList.php" method="post">
-    <div class="row">
-        <div class="col">
-            <select name="tipo">
-                <option value="nome">Nome</option>
-                <option value="cpf">CPF</option>
-                <option value="telefone">Telefone</option>
+<form method="post">
+    <div class="row mb-3">
+        <div class="col-2">
+            <select name="tipo" class="form-control">
+                <option value="Nome">Nome</option>
+                <option value="CPF">CPF</option>
+                <option value="Contato">Contato</option>
             </select>
         </div>
 
-        <div class="col">
+        <div class="col-6">
             <input type="text" name="valor" placeholder="Pesquisar" class="form-control">
         </div>
 
-        <div class="col">
+        <div class="col-4">
             <button type="submit" class="btn btn-primary">Buscar</button>
-            <a href="./FuncionarioForm.php" class="btn btn-success">Cadastrar</a>
+            <a href="./FuncionarioForm.php" class="btn btn-success">Novo Funcionário</a>
         </div>
     </div>
 </form>
 
-<div class="row mt-4">
-    <div class="col">
-        <table class="table table-striped table-hover">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Telefone</th>
-                    <th scope="col">CPF</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Ação</th>
-                    <th scope="col">Ação</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                foreach ($dados as $item) {
-                    echo "<tr>
-                            <th scope='row'>$item->id</th>
-                            <td>$item->nome</td>
-                            <td>$item->telefone</td>
-                            <td>$item->cpf</td>
-                            <td>$item->email</td>
-                            <td><a href='./usuarioForm.php?id=$item->id'>Editar</a></td>
-                            <td><a 
-                                 href='./usuarioList.php?id=$item->id'
-                                onclick='return confirm(\"Deseja Excluir?\")'
-                                 >Deletar</a></td>
-                        </tr>";
-                }
-                ?>
-            </tbody>
-        </table>
-    </div>
-</div>
-<a href="./FuncionarioForm.php" class="btn btn-success">Cadastrar</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Cargo</th>
+            <th>CPF</th>
+            <th>Contato</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
 
-<?php
-include '../../../footer.php'
-?>
+    <tbody>
+        <?php if (!empty($dados)): ?>
+            <?php foreach ($dados as $item): ?>
+                <tr>
+                    <td><?= $item->Nome ?></td>
+                    <td><?= $item->Cargo ?></td>
+                    <td><?= $item->CPF ?></td>
+                    <td><?= $item->Contato ?></td>
+
+                    <td>
+                        <a href="FuncionarioForm.php?cpf=<?= $item->CPF ?>" class="btn btn-primary btn-sm">Editar</a>
+                        <a href="FuncionarioList.php?cpf=<?= $item->CPF ?>"
+                           onclick="return confirm('Deseja realmente excluir?')"
+                           class="btn btn-danger btn-sm">Excluir</a>
+                    </td>
+                </tr>
+            <?php endforeach ?>
+        <?php else: ?>
+            <tr>
+                <td colspan="5" class="text-center">Nenhum funcionário encontrado.</td>
+            </tr>
+        <?php endif; ?>
+    </tbody>
+</table>
+
+<?php include '../../../footer.php'; ?>

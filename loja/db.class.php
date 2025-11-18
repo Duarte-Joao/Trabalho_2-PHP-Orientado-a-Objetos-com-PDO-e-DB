@@ -1,38 +1,34 @@
 <?php
 class db
 {
-
     private $host = "localhost";
     private $user = "root";
     private $password = "";
     private $port = "3306";
-    private $dbname = "db_pweb1_2025_2";
+    // coloque o nome exato do seu banco aqui (o que existe no HeidiSQL/phpMyAdmin)
+    private $dbname = "lojachape";
     private $table_name;
-
 
     public function __construct($table_name)
     {
         $this->table_name = $table_name;
     }
 
-    function conn()
+    public function conn()
     {
-
         try {
-            $conn = new PDO(
-                "mysql:host=$this->host;dbname=$this->dbname;port=$this->port",
-                $this->user,
-                $this->password,
-                [
-                    PDO::ATTR_ERRMODE,
-                    PDO::ERRMODE_EXCEPTION,
-                    PDO::MYSQL_ATTR_INIT_COMMAND => " SET NAMES utf8"
-                ]
-            );
+            $dsn = "mysql:host={$this->host};port={$this->port};dbname={$this->dbname};charset=utf8mb4";
+            $options = [
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+                PDO::ATTR_EMULATE_PREPARES => false,
+            ];
 
+            $conn = new PDO($dsn, $this->user, $this->password, $options);
             return $conn;
         } catch (PDOException $e) {
-            echo "Erro: " . $e->getMessage();
+            // Mensagem amigável em desenvolvimento — evite mostrar em produção
+            die("Erro de conexão ao banco: " . $e->getMessage());
         }
     }
 
@@ -62,7 +58,7 @@ class db
             if($flag == 0){
                 $sql .= " ? ";                     // .= é para concatenar
             }else{
-                $sql .= " ? ";
+                $sql .= ", ? ";
             }
             $flag =1;
             $arrayDados[] = $valor;
@@ -90,7 +86,7 @@ class db
                 $sql .= ", $campo = ? ";
             }
             $flag = 1;
-            $arrayDados = $valor;
+            $arrayDados[] = $valor;
         }
 
         $sql .= " WHERE id = $id ";
@@ -178,3 +174,6 @@ public function checkLogin()
     }
 }
 }*/
+
+    // ... mantenha aqui seus métodos store/update/all/find/destroy/search, etc.
+
