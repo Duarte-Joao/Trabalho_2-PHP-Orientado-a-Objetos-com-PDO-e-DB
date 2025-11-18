@@ -20,6 +20,7 @@ $BASE_URL = "/pwebDuarte/Trabalho_2-PHP-Orientado-a-Objetos-com-PDO-e-DB";
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
+<<<<<<< HEAD
                         <a class="nav-link" href="<?= $BASE_URL?>/site-chape/index.html">Home</a>
                     </li>
                     <li class="nav-item">
@@ -33,6 +34,21 @@ $BASE_URL = "/pwebDuarte/Trabalho_2-PHP-Orientado-a-Objetos-com-PDO-e-DB";
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?= $BASE_URL?>/loja/site/admin/usuario/UsuarioList.php">Usuarios</a>
+=======
+                        <a href="nav-link" href="../site-chape/index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="site/admin/produto/ProdutoList.php">Produtos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="site/admin/cliente/ClienteList.php">Clientes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="site/admin/funcionario/FuncionarioList.php">Funcionarios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="site/admin/usuario/UsuarioList.php">Usuarios</a>
+>>>>>>> b3b57f4 (Trabalhos feitos em casa antes do merge)
                     </li>
                 </ul>
             </div>
