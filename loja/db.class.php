@@ -72,29 +72,41 @@ class db
 
     public function update($dados)
     {
-        $id = $dados['id'];
-        $conn = $this->conn();
-        $flag = 0;
-        $arrayDados = [];
+    // pega o ID e remove do array
+    $id = $dados['id'];
+    unset($dados['id']);
 
-        $sql = "UPDATE `$this->table_name` SET ";
+    $conn = $this->conn();
+    $array = [];
 
-        foreach($dados as $campo => $valor){
-            if($flag ==0){
-                $sql .= "$campo = ? ";
-            }else{
-                $sql .= ", $campo = ? ";
-            }
-            $flag = 1;
-            $arrayDados[] = $valor;
+    // Monta SQL dinâmico
+    $sql = "UPDATE {$this->table_name} SET ";
+    $flag = 0;
+
+    foreach ($dados as $campo => $valor) {
+
+        // pula campos vazios ou inexistentes
+        if ($campo == 'id') continue;
+
+        if ($flag == 0) {
+            $sql .= "$campo = ?";
+        } else {
+            $sql .= ", $campo = ?";
         }
 
-        $sql .= " WHERE id = $id ";
-
-
-        $st = $conn->prepare($sql); //$st = statement
-        $st->execute($arrayDados);
+        $array[] = $valor;
+        $flag = 1;
     }
+
+    // adiciona o ID ao final (para o WHERE)
+    $sql .= " WHERE id = ? ";
+    $array[] = $id;
+
+    // prepara e executa
+    $st = $conn->prepare($sql);
+    return $st->execute($array);
+    }   
+
 
     public function all(){
 

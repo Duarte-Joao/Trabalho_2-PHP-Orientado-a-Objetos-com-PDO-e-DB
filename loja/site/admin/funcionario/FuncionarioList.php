@@ -16,8 +16,8 @@ if (!empty($_POST['valor'])) {
 }
 
 // Se deletar
-if (!empty($_GET['cpf'])) {
-    $db->destroy($_GET['cpf']);
+if (!empty($_GET['id'])) {
+    $db->destroy($_GET['id']);
     header("Location: FuncionarioList.php");
     exit;
 }
@@ -68,8 +68,8 @@ if (!empty($_GET['cpf'])) {
                     <td><?= $item->Contato ?></td>
 
                     <td>
-                        <a href="FuncionarioForm.php?cpf=<?= $item->CPF ?>" class="btn btn-primary btn-sm">Editar</a>
-                        <a href="FuncionarioList.php?cpf=<?= $item->CPF ?>"
+                        <a href="FuncionarioForm.php?id=<?= $item->id ?>" class="btn btn-primary btn-sm">Editar</a>
+                        <a href="FuncionarioList.php?id=<?= $item->id ?>"
                            onclick="return confirm('Deseja realmente excluir?')"
                            class="btn btn-danger btn-sm">Excluir</a>
                     </td>
