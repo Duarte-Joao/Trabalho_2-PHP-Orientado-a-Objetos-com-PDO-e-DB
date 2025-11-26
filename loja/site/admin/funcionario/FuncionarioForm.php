@@ -1,10 +1,13 @@
 <?php
 include '../../../header.php';
-include '../../../db.class.php';
+include '../../../database/db.class.php';
+
 
 $db = new db('funcionario');
 $data = null;
 $errors = [];
+$db->checkLogin();
+
 
 // SE FOR EDIÇÃO — CARREGA OS DADOS
 if (!empty($_GET['id'])) {

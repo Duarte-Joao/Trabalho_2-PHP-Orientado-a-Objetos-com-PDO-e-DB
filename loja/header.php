@@ -31,6 +31,9 @@ $BASE_URL = "/Trabalho2_Jackson-PHP/Trabalho_2-PHP-Orientado-a-Objetos-com-PDO-e
                     <li class="nav-item">
                         <a class="nav-link" href="<?= $BASE_URL?>/loja/site/admin/funcionario/FuncionarioList.php">Funcionarios</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= $BASE_URL?>/loja/site/admin/venda/VendaList.php">Vendas</a>
+                    </li>
                 </ul>
             </div>
         </div>

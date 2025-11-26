@@ -1,10 +1,14 @@
 <?php
 include '../../../header.php';
-include '../../../db.class.php';
+include '../../../database/db.class.php';
+
+
 
 $db = new db('clientes');
 $data = null;
 $errors = [];
+
+$db->checkLogin();
 
 // Se estiver editando (carrega os dados do cliente)
 if (!empty($_GET['id'])) {

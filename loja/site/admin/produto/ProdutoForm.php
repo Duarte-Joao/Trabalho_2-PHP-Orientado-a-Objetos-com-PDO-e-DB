@@ -1,10 +1,13 @@
 <?php
 include '../../../header.php';
-include '../../../db.class.php';
+include '../../../database/db.class.php';
++
 
 $db = new db('produtos');
 $data = null;
 $errors = [];
+$db->checkLogin();
+
 
 // CARREGAR PARA EDIÇÃO
 if (!empty($_GET['id'])) {

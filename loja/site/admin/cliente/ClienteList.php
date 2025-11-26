@@ -1,8 +1,11 @@
 <?php
 include '../../../header.php';
-include '../../../db.class.php';
+include '../../../database/db.class.php';
+
 
 $db = new db('clientes');
+$db->checkLogin();
+
 
 // EXCLUSÃO
 if (!empty($_GET['id'])) {

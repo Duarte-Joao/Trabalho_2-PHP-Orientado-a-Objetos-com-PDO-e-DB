@@ -1,8 +1,11 @@
 <?php
 include '../../../header.php';
-include '../../../db.class.php';
+include '../../../database/db.class.php';
+
 
 $db = new db('funcionario');
+$db->checkLogin();
+
 
 // Se tem busca
 if (!empty($_POST['valor'])) {
