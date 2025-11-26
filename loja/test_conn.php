@@ -1,5 +1,5 @@
 <?php
-require 'db.class.php';
+require 'database/db.class.php';
 $db = new db('funcionario');
 try {
     $c = $db->conn();
