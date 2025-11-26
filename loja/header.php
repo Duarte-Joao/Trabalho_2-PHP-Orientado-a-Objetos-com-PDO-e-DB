@@ -13,7 +13,7 @@ $BASE_URL = "/Trabalho2_Jackson-PHP/Trabalho_2-PHP-Orientado-a-Objetos-com-PDO-e
 ?>
     <nav class="navbar navbar-expand-lg navbar-dark bg-success">
         <div class="container-fluid">
-            <a class="navbar-brand" href="<?= $BASE_URL ?>/loja/index.php">Admin Loja</a>
+            <a class="navbar-brand" href="<?= $BASE_URL ?>/loja/site/admin/indexAdmin.php">Admin Loja</a>
             <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button> -->
