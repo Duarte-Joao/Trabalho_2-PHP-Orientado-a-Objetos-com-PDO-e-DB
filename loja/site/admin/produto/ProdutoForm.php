@@ -1,7 +1,7 @@
 <?php
 include '../../../header.php';
 include '../../../database/db.class.php';
-+
+
 
 $db = new db('produtos');
 $data = null;
